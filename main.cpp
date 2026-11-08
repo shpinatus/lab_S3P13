@@ -1,14 +1,11 @@
-// S3P13 Моделирование устройств с помощью класса
-// Вариант 14 «Телефон-факс». Исполнитель: Нестеренко М., ИКТГ-2521
 #include <iostream>
 #include <string>
 #include "FaxPhone.h"
 
 using namespace std;
 
-const int COUNT = 3;   // размер массива объектов
+const int COUNT = 3;
 
-// Ввод целого числа с проверкой
 int readInt(const string& prompt)
 {
     int value;
@@ -25,7 +22,6 @@ int readInt(const string& prompt)
     }
 }
 
-// Создание объекта с помощью конструктора по умолчанию
 void demoDefaultConstructor()
 {
     cout << "\n--- Объект, созданный конструктором по умолчанию ---\n";
@@ -33,7 +29,6 @@ void demoDefaultConstructor()
     phone.show();
 }
 
-// Создание объекта с помощью конструктора с параметрами
 void demoParamConstructor()
 {
     cout << "\n--- Объект, созданный конструктором с параметрами ---\n";
@@ -41,15 +36,14 @@ void demoParamConstructor()
     phone.show();
 }
 
-// Редактирование и просмотр свойств каждого объекта
 void editAndShow(FaxPhone office[], int n)
 {
     cout << "\n--- Редактирование и просмотр свойств каждого объекта ---\n";
-    office[0].change();               // включить первый аппарат
+    office[0].change();
     office[0].loadPaper(10);
-    office[1].pickUp();               // второй: снять трубку и позвонить
+    office[1].pickUp();
     office[1].dial("+7-812-305-12-00");
-    office[2].change();               // третий: включить и принять факс
+    office[2].change();
     office[2].receiveFax(7);
     for (int i = 0; i < n; i++)
     {
@@ -58,7 +52,6 @@ void editAndShow(FaxPhone office[], int n)
     }
 }
 
-// Обработка массива объектов
 void processArray(FaxPhone office[], int n)
 {
     cout << "\n--- Обработка массива объектов ---\n";
@@ -87,7 +80,6 @@ void processArray(FaxPhone office[], int n)
         }
 }
 
-// Меню управления одним объектом
 void controlMenu(FaxPhone& phone)
 {
     int work = 1;
@@ -131,7 +123,6 @@ int main()
     demoDefaultConstructor();
     demoParamConstructor();
 
-    // Создание массива объектов
     FaxPhone office[COUNT] = { FaxPhone(), FaxPhone(true, 30), FaxPhone(false, 5) };
     cout << "\n--- Массив объектов ---\n";
     for (int i = 0; i < COUNT; i++)

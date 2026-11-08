@@ -18,7 +18,6 @@ FaxPhone::FaxPhone(bool power, int paper)
     this->paper = paper;
 }
 
-// Включение / выключение. При выключении разговор обрывается.
 void FaxPhone::change()
 {
     power = !power;

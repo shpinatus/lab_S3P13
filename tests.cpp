@@ -1,5 +1,3 @@
-// Тесты модели «Телефон-факс»: проверка переходов по диаграмме состояний
-// Сборка: g++ tests.cpp FaxPhone.cpp -o tests
 #include <iostream>
 #include <sstream>
 #include <string>
@@ -20,7 +18,6 @@ void check(bool condition, const string& name)
 
 int main()
 {
-    // Сообщения устройства во время тестов не выводим
     stringstream sink;
     streambuf* old = cout.rdbuf(sink.rdbuf());
 
